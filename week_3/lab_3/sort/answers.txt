@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: Bubble sort best case is when input is already sorted which is evident with its linear growth when applyed to the sorted samples.
+
+sort2 uses: Merge Sort
+
+How do you know?: Wen runed using the random samples it can clearly be seen the logarithmic growth in time.
+
+sort3 uses: Selection sort
+
+How do you know?: First is the algorithm that remains. Second due to the quadratic growth in the running times, specially in the random samples.
