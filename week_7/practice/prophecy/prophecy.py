@@ -39,8 +39,6 @@ def main():
     
     for i in range(len(relationship)):
         db.execute("INSERT INTO house_assigments(student_id, house_id) VALUES ((SELECT id FROM students WHERE student_name = ?), (SELECT id from houses WHERE house_name = ?))", relationship[i]["student_name"], relationship[i]["house"])
-    
-    print(students_names)
 
 def add_student_names(student_name, students_names):
     if student_name not in students_names:
