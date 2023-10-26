@@ -1,0 +1,5 @@
+1.- I would characterize the listener aura based of the top 100 songs with the following queries:
+SELECT avg(energy), avg(valence), avg(danceability) FROM songs;
+
+2.- I think a better way of calculating the audio aura of a specific user would be to calculate a
+weighted average, based on how frequently each of the top 100 songs is being listened by that user.
