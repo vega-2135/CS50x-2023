@@ -3,28 +3,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const rightAnswer = document.getElementById("stapes");
     const correctness = document.getElementById("correctness");
 
-answer.forEach(answer => {
-    if(answer == rightAnswer) {
-        answer.addEventListener("click", function() {
-            changeColor(this);
-        })
-        correctness.textContent = "Correct!";
+    const freeResponse = document.getElementById("free-response");
+    //const submitAnswer = document.getaElementById("submit-answer");
+    //const correctAnswer = "Vatican City";
+
+    
+    // Multiple selecttype="submit"ion quiestion
+    answer.forEach(answer => {
+        if(answer == rightAnswer) {
+            answer.addEventListener("click", function() {
+                changeColor(this);
+                correctness.textContent = "Correct!";
+            })
+            
+        }
+        else {
+            answer.addEventListener("click", function(){
+                changeColorRed(this);
+                correctness.textContent = "Incorrect!";
+            })
+            
+        }
+
+    });
+
+    function changeColor(element) {
+        element.className = "color1";
     }
-    else {
-        answer.addEventListener("click", function(){
-            changeColorRed(this);
-        })
-        correctness.textContent = "Incorrect!";
+
+    function changeColorRed(element) {
+        element.className = "color2";
     }
 
-});
-
-function changeColor(element) {
-    element.className = "color1";
-}
-
-function changeColorRed(element) {
-    element.className = "color2";
-}
+    // Free answer quiestion
+    document.querySelector('#check').addEventListener('click', function() {
+        let input = document.querySelector('input');
+        if (input.value === 'Vatican City') {
+            input.style.backgroundColor = "green";
+            document.querySelector('#feedback').innerHTML = "Correct!";
+        } else {
+            input.style.backgroundColor = "red";
+            document.querySelector('#feedback').innerHTML = "Incorrect!";
+        }
+    });
 });
 
